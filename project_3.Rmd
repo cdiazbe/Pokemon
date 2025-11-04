@@ -1,0 +1,49 @@
+---
+title: "Pokemon with stats"
+author: "Camila Diaz"
+output: html_document
+date: "2025-11-04"
+---
+```{r, include=FALSE}
+library(readr)
+library(here)
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+```
+
+## Introduction
+
+The Pokémon with Stats dataset, available at https://www.kaggle.com/datasets/abcsds/pokemon/data, shows data for each Pokémon, including its name, type(s), and battle-related statistics. The following analysis will be performed: 
+
+* Assess whether Pokémon tend to be stronger in attack-oriented or defense-oriented statistics across Pokémon types
+* Determine whether dual-type Pokémon have higher overall battle-related statistics compared to single-type Pokémon
+
+```{r, eval=FALSE}
+pokemon<-read_csv("data/Pokemon.csv")
+```
+
+### Aim 1
+```{r, echo=FALSE}
+aim1<-readRDS(here::here("output/aim1.rds"))
+
+aim1%>%
+  knitr::kable(digits=2,
+               col.names=c("Pokémon Type", "Mean Attack", "Mean Defense", "Stronger Stat"),
+               align="c",
+               caption="Table 1: Comparison of Attack- and Defense-Oriented Statistics Across Pokémon Types")%>%
+  kableExtra::kable_styling(
+    full_width=FALSE,
+    font_size=14)
+```
+
+Table 1 shows that most Pokémon types have higher attack-oriented statistics, while a smaller number of types, including Bug, Fairy, Ghost, Rock, and Steel, tend to have higher defense-oriented statistics. Among all Pokémon types, Dragon exhibits the highest mean attack-oriented statistics, whereas Steel exhibits the highest mean defense-oriented statistics.
+
+### Aim 2
+
+```{r, echo=FALSE}
+#| fig.align="center"
+knitr::include_graphics(here::here("output/aim2.png"))
+```
+
+Figure 2 shows the variation in total battle statistics among single- and dual-type Pokémon, with dual-type Pokémon typically having higher overall statistics than single-type Pokémon.
