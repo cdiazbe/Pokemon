@@ -21,3 +21,6 @@ This repository analyzes Pokémon battle statistics, including:
 - `output/` — Generated outputs: `aim1.rds` (table), `aim2.png` (figure)  
 - `project_3.Rmd` — R Markdown report combining Aims 1 and 2  
 - `Makefile` — Automates building outputs and the report
+- `renv/` — renv project environment files (`activate.R`, `settings.json`, `.gitignore`)  
+- `renv.lock` — Lock file listing exact package versions  
+- `.Rprofile` — Project R profile for renv
