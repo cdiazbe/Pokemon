@@ -9,3 +9,8 @@ output/aim1.rds: code/02_aim1_analysis.R code/01_data_cleaning.R
 # -----------------------------
 output/aim2.png: code/03_aim2_analysis.R code/01_data_cleaning.R
 	Rscript code/03_aim2_analysis.R
+
+# -----------------------------
+.PHONY: install
+install:
+	Rscript -e "renv::restore(prompt = FALSE)"

@@ -7,6 +7,7 @@ This repository analyzes Pokémon battle statistics, including:
 
 ## How to Build
 
+- Restore the exact package versions used in this analysis: `make install`
 - Build the report: `make project_3.html`
 
 ## Folder Structure
