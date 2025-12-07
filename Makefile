@@ -14,3 +14,7 @@ output/aim2.png: code/03_aim2_analysis.R code/01_data_cleaning.R
 .PHONY: install
 install:
 	Rscript -e "renv::restore(prompt = FALSE)"
+
+# -----------------------------
+report/project_3.html:
+	docker run --rm -v "$$(pwd)/report":/project/report cdiazbe/pokemon

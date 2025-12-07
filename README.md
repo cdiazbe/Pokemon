@@ -5,10 +5,14 @@ This repository analyzes Pokémon battle statistics, including:
 1. Assess whether Pokémon tend to be stronger in attack-oriented or defense-oriented statistics across Pokémon types (Aim 1)
 2. Determine whether dual-type Pokémon have higher overall battle-related statistics compared to single-type Pokémon (Aim 2)
 
-## How to Build
+## How to Build the Report
 
-- Restore the exact package versions used in this analysis: `make install`
-- Build the report: `make project_3.html`
+- Restore the exact package versions used in this analysis locally (optional): `make install`
+- Build the report locally (optional): `make project_3.html`
+
+- Build Docker image: `docker build -t cdiazbe/pokemon .`
+- Docker image on DockerHub: https://hub.docker.com/r/cdiazbe/pokemon
+- Generate the report using Docker: `make report/project_3.html`
 
 ## Folder Structure
 
@@ -24,3 +28,4 @@ This repository analyzes Pokémon battle statistics, including:
 - `renv/` — renv project environment files (`activate.R`, `settings.json`, `.gitignore`)  
 - `renv.lock` — Lock file listing exact package versions  
 - `.Rprofile` — Project R profile for renv
+- `Dockerfile` — Instructions for building the Docker image
